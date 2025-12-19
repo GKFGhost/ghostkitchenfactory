@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghost Kitchen Factory — 1 GKF = 1 Meal</title>
     <style>
+        #bg-canvas {
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+body > *:not(canvas) {
+  position: relative;
+  z-index: 1;
+}
+
         body {
             background-color: black;
             color: white;
@@ -20,6 +34,9 @@
             object-fit: cover;
             margin: 40px auto 40px;
             display: block;
+            animation: glowPulse 3s infinite ease-in-out;
+box-shadow: 0 0 30px rgba(120, 0, 0, 0.6);
+
         }
         .tagline {
             font-size: 0.9rem;
@@ -33,10 +50,24 @@
             line-height: 1.6;
         }
         h1, h2 { margin-bottom: 10px; }
+        @keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(120, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(120, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(120, 0, 0, 0.4);
+  }
+}
+
     </style>
+
 </head>
 
 <body>
+<canvas id="bg-canvas"></canvas>
 
     <!-- Tweet-style Video Logo -->
     <video
