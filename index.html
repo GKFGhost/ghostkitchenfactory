@@ -61,6 +61,23 @@ box-shadow: 0 0 30px rgba(120, 0, 0, 0.6);
     box-shadow: 0 0 20px rgba(120, 0, 0, 0.4);
   }
 }
+.logo-glow {
+  display: inline-block;
+  border-radius: 50%;
+  animation: glowPulse 3s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(120, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(120, 0, 0, 0.85);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(120, 0, 0, 0.4);
+  }
+}
 
     </style>
 
